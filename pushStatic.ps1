@@ -6,7 +6,7 @@ git config --global user.name $username
 git config --global push.default matching
 
 Cd ../
-Get-ChildItem -Recurse -Directory
+gci -recurse -filter "vendor.js" -File 
 
 Write-Host "- Copy contents of dist folder into a static-site folder...."
 md ..\static-site
