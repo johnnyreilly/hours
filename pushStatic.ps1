@@ -5,7 +5,8 @@ git config --global user.email $email
 git config --global user.name $username
 git config --global push.default matching
 
-ls
+Cd ../
+Get-ChildItem -Recurse -Directory
 
 Write-Host "- Copy contents of dist folder into a static-site folder...."
 md ..\static-site
