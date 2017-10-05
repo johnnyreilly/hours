@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --progress --color --config internal/webpack/webpack.development.config.js",
     "build": "rimraf ../Treasury.Web/wwwroot/* && webpack --progress --color --config internal/webpack/webpack.production.config.js",
     "test": "jest --watchAll",
-    "test:teamcity": "jest --testResultsProcessor=jest-teamcity-reporter"
+    "test:appveyor": "jest --ci --testResultsProcessor=jest-junit"
   },
   "jest": {
     "globals": {
@@ -53,6 +53,7 @@
     "fork-ts-checker-webpack-plugin": "^0.2.8",
     "html-webpack-plugin": "^2.28.0",
     "jest": "^21.1.0",
+    "jest-junit": "^3.1.0",
     "jest-teamcity-reporter": "^0.7.0",
     "node-sass": "^4.5.3",
     "react-addons-shallow-compare": "^15.6.0",

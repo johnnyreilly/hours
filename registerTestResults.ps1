@@ -1,10 +1,9 @@
 write-host "Present working directory: $($pwd)"
 
-$testsuites = [xml](get-content .\test-results\*.xml)
+[xml]$testsuites = get-content .\junit.xml
 $anyFailures = $FALSE
 
-foreach ($testsuite in $testsuites.testsuite) {
-
+foreach ($testsuite in $testsuites.DocumentElement.testsuite) {
     write-host " $($testsuite.name)"
 
     foreach ($testcase in $testsuite.testcase){
@@ -16,8 +15,7 @@ foreach ($testsuite in $testsuites.testsuite) {
             write-host "Failed $($testcase.name) $($testcase.failure.message) in $($time) ms"
             Add-AppveyorTest $testName -Outcome Failed -FileName $testsuite.name -ErrorMessage $testcase.failure.message -Duration $time
             $anyFailures = $TRUE
-        }
-        else {
+        } else {
             write-host "Passed $($testcase.name) in $($time) ms"
             Add-AppveyorTest $testName -Outcome Passed -FileName $testsuite.name -Duration $time
         }

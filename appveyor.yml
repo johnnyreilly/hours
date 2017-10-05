@@ -21,7 +21,7 @@ build_script:
 - cmd: >-
     yarn build
 
-    yarn test
+    yarn test:appveyor
 
 before_test:
 - ps: >-

@@ -1,18 +1,12 @@
-# Hours React Front-end
+# Hours 
 
-Welcome to the Hours React front-end
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/johnnyreilly/hours?svg=true)](https://ci.appveyor.com/project/JohnReilly/hours)
+
+Work out the hours...
 
 ## Getting started
 
 Follow these instructions to get the front end app up and running
-
-Note: this doesn't cover running the backend API.
-
-    # clone the repo
-    ssh://git@stash.investec.co.uk:7999/ber/hours-tools.git
-
-    # change directory to the react app
-    cd src/Treasury.App
 
     # install dependencies
     yarn install
