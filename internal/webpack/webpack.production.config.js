@@ -23,7 +23,7 @@ module.exports = {
         })
     },
     output: {
-        path: path.join(process.cwd(), '..', 'Treasury.Web', 'wwwroot'),
+        path: path.join(process.cwd(), 'dist'),
         filename: '[name].js',
         publicPath: "/"
     },
