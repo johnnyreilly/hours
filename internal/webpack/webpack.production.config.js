@@ -31,6 +31,7 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
         new ForkTsCheckerWebpackPlugin({
             async: false,
+            memoryLimit: 4096,
             checkSyntacticErrors: true
         }),
         new webpack.NoEmitOnErrorsPlugin(),
