@@ -25,7 +25,6 @@ module.exports = {
     output: {
         path: path.join(process.cwd(), 'dist'),
         filename: '[name].js',
-        publicPath: "/"
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
@@ -44,6 +43,7 @@ module.exports = {
             'process.env.LOGIN_API_BASE_URL': JSON.stringify('#{LoginApiBaseUrl}'),
         }),
         new HtmlWebpackPlugin({
+            hash: true,
             inject: true,
             template: 'index.html',
             minify: {
