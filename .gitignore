@@ -2,3 +2,4 @@ node_modules/
 dist/
 .cache-loader
 junit.xml
+debug.log

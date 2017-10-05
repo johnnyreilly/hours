@@ -18,13 +18,17 @@ before_build:
     yarn install
 
 build_script:
-- cmd: >-
+- ps: >-
+    write-host 'Starting build' -foregroundcolor "magenta"
+
     yarn build
 
+    write-host 'Build complete.' -foregroundcolor "magenta"
+
+test_script:
+- ps: >-
     yarn test:appveyor
 
-before_test:
-- ps: >-
     ./registerTestResults.ps1
 
 deploy_script:
