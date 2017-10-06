@@ -1,6 +1,6 @@
 # Hours 
 
-[![Build Status](https://travis-ci.org/johnnyreilly/hours.svg?branch=master)](https://travis-ci.org/johnnyreilly/hours.svg?branch=master)
+[![Build Status](https://travis-ci.org/johnnyreilly/hours.svg?branch=master)](https://www.travis-ci.org/johnnyreilly/hours)
 
 Work out the hours...  To access the app go here: https://johnnyreilly.github.io/hours/
 
