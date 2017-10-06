@@ -18,18 +18,18 @@ before_build:
     yarn install
 
 build_script:
-- ps: >-
-    write-host 'Starting build' -foregroundcolor "magenta"
+- cmd: >-
+    echo "Starting build"
 
-    & yarn build
+    yarn build
 
-    write-host 'Build complete.' -foregroundcolor "magenta"
+    echo "Build complete."
 
 test_script:
 - ps: >-
-    & yarn test:appveyor
+    yarn test:appveyor
 
-    ./registerTestResults.ps1
+    internal/deploy/registerTestResults.ps1
 
 deploy_script:
-- ps: ./pushStatic.ps1 $env:APPVEYOR_BUILD_FOLDER $env:GithubEmail $env:GithubUsername $env:GithubPersonalAccessToken $env:APPVEYOR_REPO_NAME
+- ps: ./internal/deploy/pushStatic.ps1 $env:APPVEYOR_BUILD_FOLDER $env:GithubEmail $env:GithubUsername $env:GithubPersonalAccessToken $env:APPVEYOR_REPO_NAME
