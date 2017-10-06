@@ -14,22 +14,17 @@ branches:
 
 # scripts to run before build
 before_build:
-- cmd: >-
-    yarn install
+- cmd: yarn install
 
 build_script:
-- cmd: >-
-    echo Starting build
-
-    yarn build
-
-    echo Build complete
+- ps: write-host "Starting build" -foregroundcolor Magenta
+- ps: yarn build
+- ps: Start-Sleep -s 20
+- ps: write-host "Build complete" -foregroundcolor Magenta
 
 test_script:
-- ps: >-
-    yarn test:appveyor
-
-    internal/deploy/registerTestResults.ps1
+- ps: yarn test:appveyor
+- ps: ./internal/deploy/registerTestResults.ps1
 
 deploy_script:
 - ps: ./internal/deploy/pushStatic.ps1 $env:APPVEYOR_BUILD_FOLDER $env:GithubEmail $env:GithubUsername $env:GithubPersonalAccessToken $env:APPVEYOR_REPO_NAME

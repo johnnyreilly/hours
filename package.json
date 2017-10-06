@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dev-server --progress --color --config internal/webpack/webpack.development.config.js",
     "prebuild": "rimraf ./dist/*",
-    "build": "webpack --color --config internal/webpack/webpack.production.config.js --verbose",
+    "build": "webpack --color --config internal/webpack/webpack.production.config.js",
     "test": "jest --watchAll",
     "test:appveyor": "jest --ci --testResultsProcessor=jest-junit"
   },
