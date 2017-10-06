@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --progress --color --config internal/webpack/webpack.development.config.js",
-    "build": "rimraf ./dist/* && webpack --color --config internal/webpack/webpack.production.config.js",
+    "build": "rimraf ./dist/* && webpack --color --config internal/webpack/webpack.production.config.js --verbose",
     "test": "jest --watchAll",
     "test:appveyor": "jest --ci --testResultsProcessor=jest-junit"
   },
