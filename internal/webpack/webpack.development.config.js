@@ -30,6 +30,7 @@ const packageJson = require('../../package.json');
 const vendorDependencies = Object.keys(packageJson['dependencies']);
 
 module.exports = {
+    context: process.cwd(), // to automatically find tsconfig.json
     entry: {
         main: [
             'core-js',
