@@ -22,8 +22,11 @@ build_script:
 - ps: write-host "Build complete" -foregroundcolor Magenta
 
 test_script:
-- ps: yarn test:appveyor
-- ps: ./internal/deploy/registerTestResults.ps1
+- ps: yarn test
+
+# test_script:
+# - ps: yarn test:appveyor
+# - ps: ./internal/deploy/registerTestResults.ps1
 
 # deploy_script:
 # - ps: ./internal/deploy/pushStatic.ps1 $env:APPVEYOR_BUILD_FOLDER $env:GithubEmail $env:GithubUsername $env:GithubPersonalAccessToken $env:APPVEYOR_REPO_NAME
