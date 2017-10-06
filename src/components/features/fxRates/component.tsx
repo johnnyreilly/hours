@@ -4,7 +4,6 @@ import * as classNames from 'classnames';
 import { FxRatesStore } from '../../../stores/fxRatesStore';
 import { Stores } from '../../../stores';
 import { Rates } from './rates';
-import * as css from '../../../styles/styles.scss';
 
 export interface IFxRatesProps {
     fxRatesStore: FxRatesStore;
@@ -43,19 +42,19 @@ export class FxRatesPage extends React.Component<Partial<IFxRatesProps>, IState>
         const { rates, ratesForDate, lastLoaded } = this.props.fxRatesStore;
         return (
             <div>
-                <div className={classNames(css.field)}>
-                    <label className={classNames(css.label)}>Date</label>
-                    <div className={classNames(css.control)}>
-                        <input className={classNames(css.input)} type="text" value={date} onChange={this.handleDateChange} />
+                <div className="field">
+                    <label className="label">Date</label>
+                    <div className="control">
+                        <input className="input" type="text" value={date} onChange={this.handleDateChange} />
                     </div>
                 </div>
 
                 <button
                     className={classNames({
-                        [css.button]: true,
-                        [css.isSuccess]: !ratesForDate.error,
-                        [css.isDanger]: !!ratesForDate.error,
-                        [css.isLoading]: ratesForDate.isRequesting
+                        button: true,
+                        isSuccess: !ratesForDate.error,
+                        isDanger: !!ratesForDate.error,
+                        isLoading: ratesForDate.isRequesting
                     })}
                     onClick={this.handleLoadForDateClick}
                 >
@@ -64,10 +63,10 @@ export class FxRatesPage extends React.Component<Partial<IFxRatesProps>, IState>
 
                 <button
                     className={classNames({
-                        [css.button]: true,
-                        [css.isSuccess]: !rates.error,
-                        [css.isDanger]: !!rates.error,
-                        [css.isLoading]: rates.isRequesting
+                        button: true,
+                        isSuccess: !rates.error,
+                        isDanger: !!rates.error,
+                        isLoading: rates.isRequesting
                     })}
                     onClick={this.handleLoadLatestClick}
                 >

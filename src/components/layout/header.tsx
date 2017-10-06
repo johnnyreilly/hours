@@ -9,6 +9,7 @@ import * as classNames from 'classnames';
 import { aboutPath } from '../features/about';
 import { homePath } from '../features/home';
 import { fxRatesPath } from '../features/fxRates';
+import FaHourglassStart from 'react-icons/lib/fa/hourglass-3';
 
 interface IHeaderProps extends RouteComponentProps<{}> {
 }
@@ -37,9 +38,10 @@ export class Header extends React.Component<Partial<IHeaderProps>> {
         return (
             <nav className="nav has-shadow" id="top">
                 <div className="container">
-                    <div className="nav-left">
-                        <Link to="/">
-                            Hours
+                    <div className="navbar-brand">
+                        <Link to="/" className="navbar-item">
+                            <FaHourglassStart />
+                            <span style={{ marginLeft: '5px' }}>Hours</span>
                         </Link>
                     </div>
                     <span className="nav-toggle">

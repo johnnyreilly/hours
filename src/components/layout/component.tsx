@@ -7,11 +7,9 @@ import {
 } from 'react-router-dom';
 import { observer } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
-import * as classNames from 'classnames';
 import { Header } from './header';
 import { publicRoutes } from './routes';
 import { NotFound } from '../shared/notFound';
-import * as css from '../../styles/styles.scss';
 import { config } from '../../config';
 
 interface ILayoutProps extends RouteComponentProps<{}> {
@@ -27,10 +25,10 @@ export class Layout extends React.Component<Partial<ILayoutProps>> {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <Header />
                 <div>
-                    <main className={classNames(css.container, css.section)} role="main">
+                    <main className="container section" role="main">
                         <Switch>
                             {publicRoutes.map(this.renderRoute)}
                             <Route component={NotFound} />
