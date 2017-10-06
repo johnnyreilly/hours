@@ -19,11 +19,11 @@ before_build:
 
 build_script:
 - cmd: >-
-    echo "Starting build"
+    echo Starting build
 
     yarn build
 
-    echo "Build complete."
+    echo Build complete
 
 test_script:
 - ps: >-
