@@ -28,11 +28,11 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
-        // new ForkTsCheckerWebpackPlugin({
-        //     async: false,
-        //     memoryLimit: 4096,
-        //     checkSyntacticErrors: true
-        // }),
+        new ForkTsCheckerWebpackPlugin({
+            async: false,
+            memoryLimit: 4096,
+            checkSyntacticErrors: true
+        }),
         new webpack.NoEmitOnErrorsPlugin(),
         new UglifyJSPlugin(),
         new webpack.DefinePlugin({
@@ -73,7 +73,7 @@ module.exports = {
                     //         workers: require('os').cpus().length - 1,
                     //     },
                     // },
-                    { loader: 'ts-loader'/*, options: { happyPackMode: true }*/ }
+                    { loader: 'ts-loader', options: { happyPackMode: true } }
                 ],
                 exclude: /node_modules/
             },
