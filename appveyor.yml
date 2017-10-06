@@ -19,7 +19,6 @@ before_build:
 build_script:
 - ps: write-host "Starting build" -foregroundcolor Magenta
 - ps: yarn build
-- ps: Start-Sleep -s 20
 - ps: write-host "Build complete" -foregroundcolor Magenta
 
 test_script:
