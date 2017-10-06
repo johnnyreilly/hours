@@ -21,13 +21,13 @@ build_script:
 - ps: >-
     write-host 'Starting build' -foregroundcolor "magenta"
 
-    yarn build
+    & yarn build
 
     write-host 'Build complete.' -foregroundcolor "magenta"
 
 test_script:
 - ps: >-
-    yarn test:appveyor
+    & yarn test:appveyor
 
     ./registerTestResults.ps1
 
