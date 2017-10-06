@@ -7,8 +7,9 @@
     "start": "webpack-dev-server --progress --color --config internal/webpack/webpack.development.config.js",
     "prebuild": "rimraf ./dist/*",
     "build": "webpack --color --config internal/webpack/webpack.production.config.js",
-    "test": "jest --watchAll",
-    "test:appveyor": "jest --ci --testResultsProcessor=jest-junit"
+    "test:watch": "jest --watchAll",
+    "test:appveyor": "jest --ci --testResultsProcessor=jest-junit",
+    "test": "jest --ci --runInBand"
   },
   "jest": {
     "globals": {

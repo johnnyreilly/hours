@@ -1,6 +1,6 @@
 # Hours 
 
-[![Build Status](https://ci.appveyor.com/api/projects/status/github/johnnyreilly/hours?svg=true)](https://ci.appveyor.com/project/JohnReilly/hours)
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/johnnyreilly/hours?svg=true)](https://ci.appveyor.com/project/JohnReilly/hours) [![Build Status](https://travis-ci.org/johnnyreilly/hours.svg?branch=master)](https://travis-ci.org/johnnyreilly/hours.svg?branch=master)
 
 Work out the hours...
 
