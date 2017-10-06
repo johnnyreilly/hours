@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 const packageJson = require('../../package.json');
 const vendorDependencies = Object.keys(packageJson['dependencies']);
@@ -28,6 +29,7 @@ module.exports = {
     },
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({ name: 'vendor', filename: 'vendor.js' }),
+        new FaviconsWebpackPlugin('./src/favicon.png'),
         new ForkTsCheckerWebpackPlugin({
             async: false,
             memoryLimit: 4096,

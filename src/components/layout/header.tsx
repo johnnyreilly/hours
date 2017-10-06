@@ -19,8 +19,8 @@ interface IHeaderProps extends RouteComponentProps<{}> {
 export class Header extends React.Component<Partial<IHeaderProps>> {
 
     publicLinks = [
-        { path: fxRatesPath, title: 'FX Rates' },
         { path: homePath, title: 'Home' },
+        { path: fxRatesPath, title: 'FX Rates' },
         { path: aboutPath, title: 'About' },
     ];
 
@@ -39,7 +39,7 @@ export class Header extends React.Component<Partial<IHeaderProps>> {
             <nav className="nav has-shadow" id="top">
                 <div className="container">
                     <div className="navbar-brand">
-                        <Link to="/" className="navbar-item">
+                        <Link to="/" className="navbar-item has-text-info is-size-4">
                             <FaHourglassStart />
                             <span style={{ marginLeft: '5px' }}>Hours</span>
                         </Link>
