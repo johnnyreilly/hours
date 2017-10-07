@@ -12,6 +12,9 @@ import './styles/styles.scss';
 const api = new Api(config);
 const stores = new Stores(api);
 
+// bootstrap
+stores.hourStore.load();
+
 const rootEl = document.getElementById('root');
 ReactDOM.render(
     <AppContainer>
