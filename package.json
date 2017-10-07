@@ -77,7 +77,7 @@
     "typescript": "^2.5.2",
     "uglifyjs-webpack-plugin": "^0.4.3",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2"
+    "webpack-dev-server": "2.7.1"
   },
   "dependencies": {
     "bulma": "^0.5.3",

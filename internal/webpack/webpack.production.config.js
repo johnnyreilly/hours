@@ -19,7 +19,8 @@ module.exports = {
         ],
         vendor: vendorDependencies.filter(function (dependency) {
             return dependency !== 'core-js' && // core-js is used in main to polyfill missing apis
-                dependency !== 'bulma' &&
+            dependency !== 'whatwg-fetch' &&
+            dependency !== 'bulma' &&
                 dependency !== 'react-icons';
         })
     },
