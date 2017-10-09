@@ -7,6 +7,7 @@ import { RouteComponentProps } from 'react-router';
 import { observer } from 'mobx-react';
 import * as classNames from 'classnames';
 import { aboutPath } from '../features/about';
+import { dataPath } from '../features/data/index';
 import { homePath } from '../features/home';
 import { fxRatesPath } from '../features/fxRates';
 import FaHourglassStart from 'react-icons/lib/fa/hourglass-3';
@@ -20,6 +21,7 @@ export class Header extends React.Component<Partial<IHeaderProps>> {
 
     publicLinks = [
         { path: homePath, title: 'Home' },
+        { path: dataPath, title: 'Data' },
         { path: fxRatesPath, title: 'FX Rates' },
         { path: aboutPath, title: 'About' },
     ];
