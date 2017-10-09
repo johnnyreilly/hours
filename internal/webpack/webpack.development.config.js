@@ -26,24 +26,20 @@ function formatterForLineAndColumnUrlClicking(message, useColors) {
 }
 // END
 
-const packageJson = require('../../package.json');
-const vendorDependencies = Object.keys(packageJson['dependencies']);
+const shared = require('./shared');
+const main = [
+    'core-js',
+    'whatwg-fetch',
+    'react-hot-loader/patch',
+    "./src/index.tsx"
+];
+const vendor = shared.makeVendorEntry({ mainModules: main, modulesToExclude: ['bulma', 'react-icon'] })
 
 module.exports = {
     context: process.cwd(), // to automatically find tsconfig.json
     entry: {
-        main: [
-            'core-js',
-            'whatwg-fetch',
-            'react-hot-loader/patch',
-            "./src/index.tsx"
-        ],
-        vendor: vendorDependencies.filter(function (dependency) {
-            return dependency !== 'core-js' && // core-js is used in main to polyfill missing apis
-            dependency !== 'whatwg-fetch' &&
-            dependency !== 'bulma' &&
-            dependency !== 'react-icons';
-        })
+        main: main,
+        vendor: vendor
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
