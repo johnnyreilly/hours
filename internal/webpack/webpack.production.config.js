@@ -33,7 +33,10 @@ module.exports = {
             checkSyntacticErrors: true
         }),
         new webpack.NoEmitOnErrorsPlugin(),
-        new UglifyJSPlugin(),
+        new UglifyJSPlugin(/*{
+            unused: true,
+            dead_code: true
+        }*/),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production'),
             'process.env.API_BASE_URL': JSON.stringify('#{ApiBaseUrl}'),

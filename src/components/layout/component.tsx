@@ -12,6 +12,8 @@ import { publicRoutes } from './routes';
 import { NotFound } from '../shared/notFound';
 import { config } from '../../config';
 
+// https://react.semantic-ui.com/layouts/theming
+
 interface ILayoutProps extends RouteComponentProps<{}> {
 }
 
