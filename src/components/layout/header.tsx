@@ -10,7 +10,7 @@ import { aboutPath } from '../features/about';
 import { dataPath } from '../features/data/index';
 import { homePath } from '../features/home';
 import { fxRatesPath } from '../features/fxRates';
-import FaHourglassStart from 'react-icons/lib/fa/hourglass-3';
+// import FaHourglassStart from 'react-icons/lib/fa/hourglass-3';
 
 interface IHeaderProps extends RouteComponentProps<{}> {
 }
@@ -42,7 +42,7 @@ export class Header extends React.Component<Partial<IHeaderProps>> {
                 <div className="container">
                     <div className="navbar-brand">
                         <Link to="/" className="navbar-item has-text-info is-size-4">
-                            <FaHourglassStart />
+                            {/* <FaHourglassStart /> */}
                             <span style={{ marginLeft: '5px' }}>Hours</span>
                         </Link>
                     </div>
