@@ -5,6 +5,7 @@ import {
     RouteComponentProps,
     Switch
 } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import { Header } from './header';
@@ -27,18 +28,16 @@ export class Layout extends React.Component<Partial<ILayoutProps>> {
 
     render() {
         return (
-            <div className="container">
+            <Container>
                 <Header />
-                <div>
-                    <main className="container section" role="main">
-                        <Switch>
-                            {publicRoutes.map(this.renderRoute)}
-                            <Route component={NotFound} />
-                        </Switch>
-                    </main>
-                </div>
+                <main className="container section" role="main">
+                    <Switch>
+                        {publicRoutes.map(this.renderRoute)}
+                        <Route component={NotFound} />
+                    </Switch>
+                </main>
                 {config.development ? <DevTools /> : null}
-            </div>
+            </Container>
         );
     }
 }
