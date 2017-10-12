@@ -1,15 +1,23 @@
-export interface IConfig {
+export interface IEnv {
+    API_BASE_URL: string;
+    APP_BASE_URL: string;
+    LOGIN_APP_BASE_URL: string;
+    LOGIN_API_BASE_URL: string;
+    NODE_ENV: string;
+}
+
+export class Config {
     apiBaseUrl: string;
     appBaseUrl: string;
     loginAppBaseUrl: string;
     loginApiBaseUrl: string;
     development: boolean;
-}
 
-export const config: IConfig = {
-    apiBaseUrl: process.env.API_BASE_URL,
-    appBaseUrl: process.env.APP_BASE_URL,
-    loginAppBaseUrl: process.env.LOGIN_APP_BASE_URL,
-    loginApiBaseUrl: process.env.LOGIN_API_BASE_URL,
-    development: process.env.NODE_ENV !== 'production',
-};
+    constructor(env: IEnv) {
+        this.apiBaseUrl = env.API_BASE_URL;
+        this.appBaseUrl = env.APP_BASE_URL;
+        this.loginAppBaseUrl = env.LOGIN_APP_BASE_URL;
+        this.loginApiBaseUrl = env.LOGIN_API_BASE_URL;
+        this.development = env.NODE_ENV !== 'production';
+    }
+}

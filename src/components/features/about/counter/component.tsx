@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
-import { CounterStore } from '../../../../stores/counterStore';
-import { Stores } from '../../../../stores';
+import { CounterStore } from '../../../../dependencies/stores/counterStore';
+import { Dependencies } from '../../../../dependencies';
 
 export interface ICounterProps {
     counterStore: CounterStore;
 }
 
 @inject(
-    (stores: Stores) => ({
-        counterStore: stores.counterStore
+    (dependencies: Dependencies) => ({
+        counterStore: dependencies.counterStore
     }) as ICounterProps
 )
 @observer

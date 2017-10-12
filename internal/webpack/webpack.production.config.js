@@ -10,9 +10,9 @@ const shared = require('./shared');
 const main = [
     'core-js',
     'whatwg-fetch',
-    "./src/index.tsx"
+    './src/index.tsx'
 ];
-const vendor = shared.makeVendorEntry({ mainModules: main, modulesToExclude: ['treasury-style'] })
+const vendor = shared.makeVendorEntry({ mainModules: main, modulesToExclude: ['semantic-ui-css'] })
 
 module.exports = {
     context: process.cwd(), // to automatically find tsconfig.json

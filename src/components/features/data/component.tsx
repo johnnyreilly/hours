@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import * as classNames from 'classnames';
-import { HourStore } from '../../../stores/hourStore';
-import { Stores } from '../../../stores';
+import { HourStore } from '../../../dependencies/stores/hourStore';
+import { Dependencies } from '../../../dependencies';
 
 export interface IDataProps {
     hourStore: HourStore;
@@ -13,8 +13,8 @@ interface IState {
 }
 
 @inject(
-    (stores: Stores) => ({
-        hourStore: stores.hourStore
+    (dependencies: Dependencies) => ({
+        hourStore: dependencies.hourStore
     }) as IDataProps
 )
 @observer

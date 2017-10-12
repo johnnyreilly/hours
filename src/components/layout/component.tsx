@@ -6,19 +6,24 @@ import {
     Switch
 } from 'react-router-dom';
 import { Container } from 'semantic-ui-react';
-import { observer } from 'mobx-react';
+import { observer, inject } from 'mobx-react';
 import DevTools from 'mobx-react-devtools';
 import { Header } from './header';
 import { publicRoutes } from './routes';
 import { NotFound } from '../shared/notFound';
-import { config } from '../../config';
+import { Dependencies } from '../../dependencies/index';
+import { Config } from '../../config';
 
 // https://react.semantic-ui.com/layouts/theming
 
 interface ILayoutProps extends RouteComponentProps<{}> {
+    config: Config;
 }
 
 @withRouter
+@inject((dependencies: Dependencies) => ({
+    config: dependencies.config
+}))
 @observer
 export class Layout extends React.Component<Partial<ILayoutProps>> {
 
@@ -27,6 +32,7 @@ export class Layout extends React.Component<Partial<ILayoutProps>> {
     )
 
     render() {
+        const { config } = this.props;
         return (
             <Container>
                 <Header />

@@ -1,5 +1,5 @@
 import { ajaxUnwrapIApiResult } from './ajax';
-import { IConfig } from '../config';
+import { Config } from '../config';
 
 export interface ILoginResultView {
     userId: string;
@@ -31,7 +31,7 @@ export interface ISecurityUser {
 }
 
 export class SecurityApi {
-    constructor(private config: IConfig) { }
+    constructor(private config: Config) { }
 
     createToken = (login: ILogin) =>
         ajaxUnwrapIApiResult<ILoginResultView>(`${this.config.loginApiBaseUrl}/api/token`, {

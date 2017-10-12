@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { inject, observer } from 'mobx-react';
 import * as classNames from 'classnames';
-import { FxRatesStore } from '../../../stores/fxRatesStore';
-import { Stores } from '../../../stores';
+import { FxRatesStore } from '../../../dependencies/stores/fxRatesStore';
+import { Dependencies } from '../../../dependencies';
 import { Rates } from './rates';
 
 export interface IFxRatesProps {
@@ -14,8 +14,8 @@ interface IState {
 }
 
 @inject(
-    (stores: Stores) => ({
-        fxRatesStore: stores.fxRatesStore
+    (dependencies: Dependencies) => ({
+        fxRatesStore: dependencies.fxRatesStore
     }) as IFxRatesProps
 )
 @observer

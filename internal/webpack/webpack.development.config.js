@@ -31,9 +31,9 @@ const main = [
     'core-js',
     'whatwg-fetch',
     'react-hot-loader/patch',
-    "./src/index.tsx"
+    './src/index.tsx'
 ];
-const vendor = shared.makeVendorEntry({ mainModules: main, modulesToExclude: ['bulma', 'react-icon'] })
+const vendor = shared.makeVendorEntry({ mainModules: main, modulesToExclude: ['semantic-ui-css'] })
 
 module.exports = {
     context: process.cwd(), // to automatically find tsconfig.json
