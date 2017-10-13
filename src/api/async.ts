@@ -1,5 +1,4 @@
 import { observable, action } from 'mobx';
-import { asyncAction } from 'mobx-utils';
 
 /**
  * Will typically be used in react components
@@ -34,18 +33,28 @@ class Async<TRequest, TResponse> implements IAsyncProps<TResponse> {
 
     }
 
-    @asyncAction
-    *run(request?: TRequest) {
+    @action
+    async run(request?: TRequest) {
         try {
             this.isRequesting = true;
             this.response = undefined;
             this.error = undefined;
-            this.response = yield this.process(request);
+
+            const response = await this.process(request);
+            this.runSuccess(response);
         } catch (error) {
-            this.error = error.message ? error.message : error;
-        } finally {
-            this.isRequesting = false;
+            this.runError(error);
         }
+    }
+
+    @action private runSuccess(response: TResponse) {
+        this.response = response;
+        this.isRequesting = false;
+    }
+
+    @action private runError(error: any) {
+        this.error = error.message ? error.message : error;
+        this.isRequesting = false;
     }
 
     @action
