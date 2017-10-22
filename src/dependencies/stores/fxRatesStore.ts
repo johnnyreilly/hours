@@ -26,7 +26,7 @@ export class FxRatesStore {
 
   @action async loadRatesForDate(date: string) {
     await this.ratesForDate.run(date);
-    if (this.rates.response) {
+    if (this.ratesForDate.response) {
       this.setLastLoaded('ratesForDate');
     }
   }

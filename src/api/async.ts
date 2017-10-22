@@ -22,12 +22,12 @@ class Async<TRequest, TResponse> implements IAsyncProps<TResponse> {
     /**
      * (optional) The response received last time a request was run
      */
-    @observable.ref response?: TResponse;
+    @observable.ref response?: TResponse = undefined;
 
     /**
      * (optional) The error received last time a request was run
      */
-    @observable.ref error?: string;
+    @observable.ref error?: string = undefined;
 
     constructor(private process: (request: TRequest) => Promise<TResponse>) {
 
