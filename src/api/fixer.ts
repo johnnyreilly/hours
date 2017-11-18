@@ -1,4 +1,4 @@
-import { ajax, jsonHeaders } from './ajax';
+import { ajax } from './ajax';
 
 export interface IFxRates {
     base: string;
@@ -13,7 +13,6 @@ export class FixerApi {
     getRatesForDate = (date: string) =>
         ajax<IFxRates>('https://api.fixer.io/' + date)
 
-    // Not a real method - in place to demostrate how saves might be done
-    saveRates = (rate: IFxRates) =>
-        ajax<IFxRates>('https://api.fixer.io/', { headers: jsonHeaders, method: 'POST', body: JSON.stringify(rate) })
+    // saveRates = (rate: IFxRates) =>
+    //     ajax<IFxRates>('https://api.fixer.io/', { headers: jsonHeaders, method: 'POST', body: JSON.stringify(rate) })
 }

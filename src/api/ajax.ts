@@ -12,10 +12,10 @@ export async function ajax<TResponse extends {}, TMappedResponse = TResponse>(
     try {
         const response = await fetch(input, {
             ...init,
-            headers: {
+            headers: new Headers({
                 ...jsonHeaders,
                 ...(init === undefined ? undefined : init.headers)
-            },
+            }),
         });
         const validResponse = await status(response);
         const responseJson = await json<TResponse>(validResponse);
